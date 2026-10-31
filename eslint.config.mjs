@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Template HTML sumber (referensi konversi), bukan kode aplikasi.
+    "agrihub-*/**",
   ]),
 ]);
 

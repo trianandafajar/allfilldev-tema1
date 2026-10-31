@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# example env stays tracked
+!.env.example
+agrihub-agriculture-and-organic-html-template-2026-08-15-09-00-49-utc/
+.playwright-mcp/
