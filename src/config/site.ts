@@ -19,4 +19,34 @@ export const sitePages = [
     title: "Kontak",
     description: "Hubungi AgriHub lewat alamat, telepon, email, atau formulir untuk konsultasi dan pertanyaan seputar layanan kami.",
   },
+  {
+    path: "/layanan",
+    title: "Layanan",
+    description: "Layanan AgriHub untuk petani: solusi tanam hijau, teknologi panen, konsultasi lapangan, dan pertanian berbasis data.",
+  },
+  {
+    path: "/galeri",
+    title: "Galeri",
+    description: "Galeri proyek AgriHub bersama kelompok tani: panen, kebun organik, hidroponik, kompos, dan irigasi.",
+  },
+  {
+    path: "/blog",
+    title: "Blog",
+    description: "Artikel AgriHub seputar budidaya, panen, tanah, dan cerita petani dari berbagai daerah.",
+  },
+  {
+    path: "/faq",
+    title: "FAQ",
+    description: "Jawaban atas pertanyaan yang paling sering diajukan seputar AgriHub, layanan pendampingan, pelatihan, dan budidaya.",
+  },
+  {
+    path: "/syarat-dan-ketentuan",
+    title: "Syarat dan Ketentuan",
+    description: "Syarat dan ketentuan penggunaan situs dan layanan AgriHub.",
+  },
+  {
+    path: "/kebijakan-privasi",
+    title: "Kebijakan Privasi",
+    description: "Cara AgriHub mengumpulkan, menggunakan, dan melindungi data pribadi Anda.",
+  },
 ] as const;

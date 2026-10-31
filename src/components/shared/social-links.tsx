@@ -22,6 +22,10 @@ const variants = {
     "gap-2.5 [&_a]:size-9 [&_a]:rounded-sm [&_a]:border [&_a]:border-primary [&_a]:bg-white [&_a]:text-base [&_a]:text-foreground [&_a:hover]:border-accent [&_a:hover]:bg-accent [&_a:hover]:text-white",
   footer:
     "gap-2.5 lg:gap-5 [&_a]:size-[38px] [&_a]:rounded-full [&_a]:border [&_a]:border-white/20 [&_a]:bg-forest [&_a]:text-white [&_a]:transition-all [&_a]:duration-500 [&_a:hover]:bg-accent [&_a:hover]:text-forest",
+  share:
+    "gap-2.5 [&_a]:size-[35px] [&_a]:rounded-[5px] [&_a]:bg-secondary [&_a]:text-base [&_a]:text-forest [&_a:hover]:bg-primary [&_a:hover]:text-white",
+  "share-outline":
+    "gap-5 [&_a]:size-9 [&_a]:border [&_a]:border-forest/20 [&_a]:text-base [&_a]:text-forest [&_a:hover]:border-accent [&_a:hover]:bg-accent [&_a:hover]:text-white",
 } as const
 
 type SocialLinksProps = {
@@ -38,6 +42,7 @@ export function SocialLinks({ links, variant, className }: SocialLinksProps) {
           <a
             href={link.href}
             aria-label={link.label}
+            {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className="flex items-center justify-center transition-all duration-400 ease-in-out"
           >
             {link.network === "x" ? (

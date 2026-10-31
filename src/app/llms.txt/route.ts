@@ -1,8 +1,9 @@
-import { siteConfig, sitePages } from "@/config/site";
+import { siteConfig } from "@/config/site";
+import { getAllPages } from "@/lib/site-pages";
 import { absoluteUrl } from "@/lib/seo";
 
 export function GET() {
-  const pages = sitePages
+  const pages = getAllPages()
     .map((page) => `- [${page.title}](${absoluteUrl(page.path)}): ${page.description}`)
     .join("\n");
 

@@ -11,14 +11,14 @@ export type StatsProps = {
 
 export function Stats({ items, separator }: StatsProps) {
   return (
-    <section className="relative z-1 before:absolute before:bottom-0 before:left-0 before:-z-1 before:h-[82px] before:w-full before:bg-secondary before:content-['']">
+    <section className="relative z-1 before:absolute before:bottom-0 before:left-0 before:-z-1 before:h-1/2 md:before:h-[82px] before:w-full before:bg-secondary before:content-['']">
       <div className="container">
-        <div className="flex items-center justify-between gap-6">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:flex md:items-center md:justify-between">
           {items.flatMap((item, index) => {
             const counter = (
               <div
                 key={item.label}
-                className="grid gap-3.5 max-md:w-[40%] md:gap-[15px] lg:flex lg:items-center lg:gap-[15px] xl:gap-5"
+                className="grid content-start gap-2 md:gap-[15px] lg:flex lg:items-center lg:gap-[15px] xl:gap-5"
               >
                 <h2 className="mb-0 text-[26px] font-normal text-primary [-webkit-text-stroke:1px_var(--primary)] md:text-[34px] xl:text-[42px] 2xl:text-[50px]">
                   <CountUp

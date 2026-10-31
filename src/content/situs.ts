@@ -12,7 +12,7 @@ export const navItems: readonly NavItem[] = [
   { label: "Beranda", href: "/" },
   { label: "Tentang Kami", href: "/tentang" },
   { label: "Layanan", href: "/layanan" },
-  { label: "Proyek", href: "/galeri" },
+  { label: "Galeri", href: "/galeri" },
   { label: "Blog", href: "/blog" },
   { label: "Kontak", href: "/kontak" },
 ]
@@ -68,8 +68,8 @@ export const footerContent = {
   })),
   copyright: "Hak cipta dilindungi.",
   legalLinks: [
-    { label: "Syarat & Ketentuan", href: "/kontak" },
-    { label: "Kebijakan Privasi", href: "/kontak" },
+    { label: "Syarat & Ketentuan", href: "/syarat-dan-ketentuan" },
+    { label: "Kebijakan Privasi", href: "/kebijakan-privasi" },
     { label: "Hubungi Kami", href: "/kontak" },
   ] satisfies NavLink[],
 }

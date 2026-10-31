@@ -19,7 +19,7 @@ export const intro: AboutIntroProps = {
     { label: "Pangan Sehat", value: 80 },
   ],
   cta: { label: "Selengkapnya", href: "/layanan" },
-  image: { src: "/images/about/choose-man.png", alt: "Petani membawa hasil panen segar", width: 546, height: 546 },
+  image: { src: "/images/about/about-v3.png", alt: "Petani membawa hasil panen segar", width: 546, height: 546 },
   decorations: {
     side: { src: "/images/about/f-food.png", width: 162, height: 162 },
     top: { src: "/images/about/l-food.png", width: 130, height: 130 },

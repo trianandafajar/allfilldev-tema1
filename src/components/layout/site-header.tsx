@@ -25,7 +25,7 @@ export function SiteHeader() {
               />
             </Link>
           </div>
-          <div className="flex items-center justify-end gap-2.5 2xl:gap-10">
+          <div className="flex items-center justify-end gap-4 xl:gap-2.5 2xl:gap-10">
             <MainMenu items={navItems} />
             <div className="flex items-center gap-2.5 max-[500px]:hidden 2xl:gap-[18px]">
               <div className="hidden sm:block">
@@ -33,7 +33,7 @@ export function SiteHeader() {
                   asChild
                   variant="brand"
                   size="cta"
-                  className="h-[42px] px-3.5 py-3 text-xs font-medium md:h-[49px] md:px-4 md:py-2 md:text-[13px] md:font-normal 2xl:h-[60px] 2xl:px-[30px] 2xl:py-[18px] 2xl:text-[15px]"
+                  className="inline-flex h-[42px] items-center justify-center gap-2 px-3.5 py-3 text-xs font-medium md:h-[49px] md:px-4 md:py-2 md:text-[13px] md:font-normal 2xl:h-[60px] 2xl:px-[30px] 2xl:py-[18px] 2xl:text-[15px]"
                 >
                   <Link href={headerCta.href}>
                     {headerCta.label}

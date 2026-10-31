@@ -22,7 +22,7 @@ export default function KontakPage() {
       <PageBanner {...banner} />
       <Contact
         {...contact}
-        className="pb-12 before:block before:h-12 before:bg-white before:content-[''] xl:pb-20 xl:before:h-20"
+        className="pb-12 before:hidden before:h-12 before:bg-white before:content-[''] md:before:block xl:pb-20 xl:before:h-20"
         formClassName="py-8 min-[501px]:py-12 xl:py-20"
       />
       <MapEmbed {...map} />

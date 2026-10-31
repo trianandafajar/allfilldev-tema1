@@ -47,11 +47,11 @@ export function TestimonialSlider({ items, dotLabel }: TestimonialSliderProps) {
       setApi={setApi}
       opts={{ loop: true, duration: SLIDE_DURATION }}
       plugins={[Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false, stopOnMouseEnter: false })]}
-      className="-m-[30px]"
+      className="-mx-3 -my-[30px] md:-m-[30px]"
     >
-      <CarouselContent className="-ml-0.5">
+      <CarouselContent className="ml-0 md:-ml-0.5">
         {items.map((item) => (
-          <CarouselItem key={item.name} className="py-[30px] pr-[30px] pl-8">
+          <CarouselItem key={item.name} className="px-3 py-[30px] md:pr-[30px] md:pl-8">
             <div className="rounded-[10px] bg-white p-5 shadow-brand xl:p-10">
               <div className="grid justify-between lg:flex">
                 <div className="mb-6 flex items-center gap-3.5 xl:mb-[30px] xl:gap-5 2xl:gap-11">

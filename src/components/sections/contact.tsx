@@ -37,7 +37,7 @@ export function Contact({ newsletter, form, getElement, sunElement, className, f
         <div className="container relative">
           <div className="grid items-end justify-between gap-6 md:grid-cols-2">
             <div className="xl:mb-12 xl:pb-6">
-              <div className="relative hidden w-4/5 pb-[45px] before:absolute before:-top-[2000px] before:-right-[100vw] before:bottom-0 before:-left-[100vw] before:-z-1 before:bg-white before:content-[''] md:block xl:w-auto xl:pb-[0]">
+              <div className="relative hidden w-4/5 pb-[0] before:absolute before:-top-[2000px] before:-right-[100vw] before:bottom-0 before:-left-[100vw] before:-z-1 before:bg-white before:content-[''] md:block xl:w-auto">
                 <Image src={getElement.src} alt="" width={getElement.width} height={getElement.height} aria-hidden />
               </div>
               <div className="relative z-1 rounded-b-[20px] px-[15px] pt-[60px] pb-[30px] before:absolute before:bottom-0 before:left-0 before:size-full before:rounded-b-[20px] before:bg-linear-[91deg_in_srgb,white_0.62%,transparent_99.47%] before:opacity-5 before:content-[''] sm:p-[30px] sm:pt-[70px] sm:pb-10 2xl:p-10 2xl:pt-6">

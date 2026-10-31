@@ -15,7 +15,7 @@ export type ContactInfoProps = {
 
 export function ContactInfo({ items }: ContactInfoProps) {
   return (
-    <section className="space-top space-bottom overflow-hidden bg-white">
+    <section className="overflow-hidden bg-white max-md:py-12 md:space-top md:space-bottom">
       <div className="container">
         <div className="grid justify-center gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {items.map((item) => (

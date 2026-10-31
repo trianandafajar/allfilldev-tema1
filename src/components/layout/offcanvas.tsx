@@ -18,7 +18,6 @@ import {
   offcanvasContent,
   offcanvasSocials,
 } from "@/content/situs"
-import { cn } from "@/lib/utils"
 
 const contactRows = [
   { icon: "light-location-dot", text: contactInfo.address, href: "#" },
@@ -45,20 +44,12 @@ export function Offcanvas() {
         </Dialog.Trigger>
       </div>
 
-      <Dialog.Portal forceMount>
-        {/* Bukan Dialog.Overlay: overlay Radix yang di-forceMount memasang scroll-lock permanen pada <body>. */}
-        <div
-          aria-hidden
-          onClick={() => setOpen(false)}
-          className={cn(
-            "fixed inset-0 z-900 bg-overlay transition-opacity duration-[450ms]",
-            open ? "visible opacity-80" : "pointer-events-none invisible opacity-0"
-          )}
-        />
+      {/* Tanpa forceMount: panel yang selalu terpasang membuat Radix menyembunyikan seluruh halaman (aria-hidden) dari pembaca layar. */}
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-900 bg-overlay opacity-80 duration-[450ms] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
         <Dialog.Content
-          forceMount
           aria-describedby={undefined}
-          className="invisible fixed top-0 right-0 z-99999 h-full w-[300px] translate-x-[calc(100%+80px)] overflow-y-scroll bg-white transition-[transform,visibility] duration-[450ms] ease-in-out outline-none [scrollbar-width:none] min-[451px]:w-[400px] data-[state=open]:visible data-[state=open]:translate-x-0 [&::-webkit-scrollbar]:hidden"
+          className="fixed top-0 right-0 z-99999 h-full w-[300px] overflow-y-scroll bg-white duration-[450ms] ease-in-out outline-none [scrollbar-width:none] min-[451px]:w-[400px] data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right-full data-[state=open]:animate-in data-[state=open]:slide-in-from-right-full [&::-webkit-scrollbar]:hidden"
         >
           <Dialog.Title className="sr-only">Menu navigasi</Dialog.Title>
           <div className="relative h-full p-5 sm:p-[30px]">

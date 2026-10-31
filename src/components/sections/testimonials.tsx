@@ -44,8 +44,8 @@ export function Testimonials({
       )}
     >
       <div className="container">
-        <div className="grid items-center gap-6 md:grid-cols-2">
-          <div className="relative">
+        <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
+          <div className="relative min-w-0">
             <SectionTitle
               align="left"
               eyebrow={eyebrow}
@@ -61,7 +61,7 @@ export function Testimonials({
             <TestimonialSlider items={items} dotLabel={dotLabel} />
           </div>
           <Reveal animation="down" delay={0.4}>
-            <div className="relative w-full lg:pl-5">
+            <div className="relative hidden w-full md:block lg:pl-5">
               <Image
                 src={image.src}
                 alt={image.alt}

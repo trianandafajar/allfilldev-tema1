@@ -10,6 +10,7 @@ import type { PricingProps } from "@/components/sections/pricing"
 import type { ServicesProps } from "@/components/sections/services"
 import type { StatsProps } from "@/components/sections/stats"
 import type { TestimonialsProps } from "@/components/sections/testimonials"
+import { serviceCards } from "@/content/layanan"
 
 const video = {
   label: "Tonton Video",
@@ -31,26 +32,7 @@ export const hero: HeroProps = {
 export const services: ServicesProps = {
   eyebrow: "Layanan Kami",
   title: "Menyuburkan negeri dari benih hingga meja makan",
-  items: [
-    {
-      title: "Solusi Tanam Hijau",
-      href: "/layanan",
-      image: { src: "/images/service/solusi-tanam-hijau.jpg", alt: "Sistem irigasi tetes di lahan sayur" },
-      icon: "/images/icon/water-hose.svg",
-    },
-    {
-      title: "Teknologi Panen untuk Petani",
-      href: "/layanan",
-      image: { src: "/images/service/teknologi-panen-petani.jpg", alt: "Petani memanen hasil kebun" },
-      icon: "/images/icon/ser-flower.svg",
-    },
-    {
-      title: "Konsultan Profesional",
-      href: "/layanan",
-      image: { src: "/images/service/konsultan-pertanian.jpg", alt: "Konsultan memeriksa peta lahan" },
-      icon: "/images/icon/map-plant.svg",
-    },
-  ],
+  items: serviceCards.slice(0, 3),
 }
 
 export const about: AboutProps = {
@@ -79,20 +61,20 @@ export const gallery: GalleryProps = {
     {
       title: "Bertani untuk Masa Depan yang Lebih Baik",
       subtitle: "Layanan Tani Sejahtera",
-      href: "/galeri",
-      image: { src: "/images/gallery/1.png", alt: "Hamparan sawah saat panen", width: 555, height: 424 },
+      href: "/galeri/bertani-untuk-masa-depan-yang-lebih-baik",
+      image: { src: "/images/gallery/1.png", alt: "Petani merawat sayur di bedengan", width: 555, height: 424 },
       revealOnHover: true,
     },
     {
       title: "Panen Raya di Lahan Organik",
       subtitle: "Kebun Organik Lembang",
-      href: "/galeri",
+      href: "/galeri/panen-raya-di-lahan-organik",
       image: { src: "/images/gallery/2.png", alt: "Petani memanen sayur organik", width: 630, height: 424 },
     },
     {
       title: "Kebun Sayur Hidroponik",
       subtitle: "Kelompok Tani Makmur",
-      href: "/galeri",
+      href: "/galeri/kebun-sayur-hidroponik",
       image: { src: "/images/gallery/3.png", alt: "Instalasi hidroponik berisi selada", width: 555, height: 424 },
       revealOnHover: true,
     },
@@ -211,7 +193,7 @@ export const brands: BrandsProps = {
   ],
 }
 
-const avatar = { src: "/images/testimonial/re2.png", width: 79, height: 79 }
+const avatar = { width: 79, height: 79 }
 
 export const testimonials: TestimonialsProps = {
   eyebrow: "Testimoni",
@@ -223,28 +205,28 @@ export const testimonials: TestimonialsProps = {
       role: "Petani Padi, Karawang",
       quote:
         "Setelah ikut pendampingan AgriHub, hasil panen padi saya naik hampir sepertiga. Penyuluhnya datang langsung ke sawah dan sabar menjelaskan setiap langkah.",
-      avatar: { ...avatar, alt: "Foto Siti Rahayu" },
+      avatar: { ...avatar, src: "/images/testimonial/siti-rahayu.jpg", alt: "Foto Siti Rahayu" },
     },
     {
       name: "Budi Santoso",
       role: "Pemilik Kebun Hortikultura, Lembang",
       quote:
         "Jadwal tanam dan pemantauan lahan dari AgriHub membuat kebun saya jauh lebih teratur. Sayuran kami kini rutin dipasok ke pasar modern.",
-      avatar: { ...avatar, alt: "Foto Budi Santoso" },
+      avatar: { ...avatar, src: "/images/testimonial/budi-santoso.jpg", alt: "Foto Budi Santoso" },
     },
     {
       name: "Dewi Lestari",
       role: "Ketua Kelompok Tani, Magelang",
       quote:
         "Pelatihan pengendalian hama ramah lingkungan sangat berguna. Anggota kelompok kami sekarang berani mengurangi pestisida kimia.",
-      avatar: { ...avatar, alt: "Foto Dewi Lestari" },
+      avatar: { ...avatar, src: "/images/testimonial/dewi-lestari.jpg", alt: "Foto Dewi Lestari" },
     },
     {
       name: "Agus Pratama",
       role: "Pengusaha Agribisnis, Malang",
       quote:
         "Konsultasi AgriPro membantu saya menyusun rencana usaha dan menghitung modal dengan lebih realistis. Usaha kami berkembang dua kali lipat dalam setahun.",
-      avatar: { ...avatar, alt: "Foto Agus Pratama" },
+      avatar: { ...avatar, src: "/images/testimonial/agus-pratama.jpg", alt: "Foto Agus Pratama" },
     },
   ],
   image: { src: "/images/testimonial/testimonial.png", alt: "Pelanggan AgriHub tersenyum di kebun", width: 600, height: 595 },
@@ -263,32 +245,32 @@ export const blog: BlogProps = {
     {
       title: "Dari Ladang ke Meja: Cerita Pertanian Kita",
       excerpt: "Pertanian dan perkebunan adalah sektor penting yang melibatkan jutaan orang",
-      href: "/blog",
+      href: "/blog/dari-ladang-ke-meja-cerita-pertanian-kita",
       date: "22 Jan",
       comments: "5 Komentar",
       author: "Oleh admin",
       readMore: "Baca Selengkapnya",
-      image: { src: "/images/blog/dari-ladang-ke-meja.jpg", alt: "Hasil panen sayur di atas meja", width: 410, height: 306 },
+      image: { src: "/images/blog/dari-ladang-ke-meja.jpg", alt: "Petani memikul padi saat matahari terbit", width: 410, height: 306 },
     },
     {
       title: "Segarnya Hasil Panen untuk Semua",
       excerpt: "Pertanian dan perkebunan adalah sektor penting yang melibatkan jutaan orang",
-      href: "/blog",
+      href: "/blog/segarnya-hasil-panen-untuk-semua",
       date: "22 Jan",
       comments: "5 Komentar",
       author: "Oleh admin",
       readMore: "Baca Selengkapnya",
-      image: { src: "/images/blog/segarnya-hasil-panen.jpg", alt: "Keranjang berisi sayuran segar", width: 410, height: 306 },
+      image: { src: "/images/blog/segarnya-hasil-panen.jpg", alt: "Peti kayu berisi sayuran segar", width: 410, height: 306 },
     },
     {
       title: "Menggali Potensi Pertanian Indonesia",
       excerpt: "Pertanian dan perkebunan adalah sektor penting yang melibatkan jutaan orang",
-      href: "/blog",
+      href: "/blog/menggali-potensi-pertanian-indonesia",
       date: "22 Jan",
       comments: "5 Komentar",
       author: "Oleh admin",
       readMore: "Baca Selengkapnya",
-      image: { src: "/images/blog/menggali-potensi-pertanian-indonesia.jpg", alt: "Lahan pertanian di pegunungan", width: 410, height: 306 },
+      image: { src: "/images/blog/menggali-potensi-pertanian-indonesia.jpg", alt: "Rumah kaca berisi selada hijau", width: 410, height: 306 },
     },
   ],
 }

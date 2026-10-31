@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import type { CSSProperties } from "react"
 
 import { FaIcon } from "@/components/shared/fa-icon"
 import { Reveal } from "@/components/shared/reveal"
@@ -13,7 +14,7 @@ export type PageBannerProps = {
 
 export function PageBanner({ title, crumbs, image }: PageBannerProps) {
   return (
-    <section className="relative z-1 overflow-hidden bg-[url(/images/about/bread-bg.png)] bg-cover bg-center bg-no-repeat py-[50px] pb-[60px] before:absolute before:inset-0 before:-z-1 before:bg-linear-to-r before:from-forest before:via-forest/90 before:to-primary/60 before:content-[''] lg:py-20 lg:pb-[90px] xl:py-[150px]">
+    <section className="relative z-1 overflow-hidden bg-[url(/images/about/bread-bg.jpg)] bg-cover bg-center bg-no-repeat pt-[120px] pb-[60px] before:absolute before:inset-0 before:-z-1 before:bg-linear-to-r before:from-forest before:via-forest/90 before:to-primary/60 before:content-[''] lg:pt-[140px] lg:pb-[90px] xl:py-[150px]">
       <div className="container">
         <div className="flex flex-wrap items-center justify-between gap-6 xl:gap-x-10">
           <div>
@@ -45,7 +46,8 @@ export function PageBanner({ title, crumbs, image }: PageBannerProps) {
             width={image.width}
             height={image.height}
             aria-hidden
-            className="hidden h-auto w-[120px] sm:block lg:w-[180px] xl:w-auto"
+            style={{ "--banner-image-width": `${image.width}px` } as CSSProperties}
+            className="hidden h-auto w-[120px] sm:block lg:w-[180px] xl:w-(--banner-image-width)"
           />
         </div>
       </div>
