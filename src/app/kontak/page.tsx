@@ -7,14 +7,15 @@ import { MapEmbed } from "@/components/shared/map-embed";
 import { sitePages } from "@/config/site";
 import { contact } from "@/content/beranda";
 import { banner, info, map } from "@/content/kontak";
+import { pageMetadata } from "@/lib/seo";
 
 const page = sitePages[2];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.title,
   description: page.description,
-  alternates: { canonical: page.path },
-};
+  path: page.path,
+});
 
 export default function KontakPage() {
   return (

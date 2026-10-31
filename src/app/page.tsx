@@ -13,6 +13,7 @@ import { Services } from "@/components/sections/services";
 import { Stats } from "@/components/sections/stats";
 import { Testimonials } from "@/components/sections/testimonials";
 import { sitePages } from "@/config/site";
+import { pageMetadata } from "@/lib/seo";
 import {
   about,
   blog,
@@ -30,11 +31,11 @@ import {
 
 const page = sitePages[0];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.title,
   description: page.description,
-  alternates: { canonical: page.path },
-};
+  path: page.path,
+});
 
 export default function Home() {
   return (

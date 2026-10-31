@@ -6,14 +6,15 @@ import { ServiceList } from "@/components/sections/service-list";
 import { sitePages } from "@/config/site";
 import { contact } from "@/content/beranda";
 import { listBanner, serviceCards } from "@/content/layanan";
+import { pageMetadata } from "@/lib/seo";
 
 const page = sitePages[3];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.title,
   description: page.description,
-  alternates: { canonical: page.path },
-};
+  path: page.path,
+});
 
 export default function LayananPage() {
   return (

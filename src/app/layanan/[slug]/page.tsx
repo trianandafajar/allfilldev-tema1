@@ -6,10 +6,10 @@ import { PageBanner } from "@/components/sections/page-banner";
 import { ServiceDetail } from "@/components/sections/service-detail";
 import { contact } from "@/content/beranda";
 import { getService, serviceSlugs } from "@/content/layanan";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
-// Semua slug diprerender lewat generateStaticParams; tanpa ini mode dev menuntut Suspense di sekitar `params`.
 export const instant = false;
 
 export function generateStaticParams() {
@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService(slug);
   if (!service) return {};
 
-  return {
+  return pageMetadata({
     title: service.title,
     description: service.summary,
-    alternates: { canonical: `/layanan/${slug}` },
-  };
+    path: `/layanan/${slug}`,
+  });
 }
 
 export default async function LayananDetailPage({ params }: Props) {

@@ -7,14 +7,15 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { sitePages } from "@/config/site";
 import { contact } from "@/content/beranda";
 import { banner, list, schema } from "@/content/faq";
+import { pageMetadata } from "@/lib/seo";
 
 const page = sitePages[6];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.title,
   description: page.description,
-  alternates: { canonical: page.path },
-};
+  path: page.path,
+});
 
 export default function FaqPage() {
   return (

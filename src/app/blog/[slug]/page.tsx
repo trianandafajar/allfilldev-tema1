@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/config/site";
 import { contact } from "@/content/beranda";
 import { blogSlugs, getPost } from "@/content/blog";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, pageMetadata } from "@/lib/seo";
 import { shareLinks } from "@/lib/share";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -25,12 +25,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(slug);
   if (!post) return {};
 
-  return {
+  return pageMetadata({
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: `/blog/${slug}` },
-    openGraph: { type: "article", publishedTime: post.date, images: [post.image.src] },
-  };
+    path: `/blog/${slug}`,
+    image: post.image.src,
+    type: "article",
+    publishedTime: post.date,
+  });
 }
 
 export default async function BlogDetailPage({ params }: Props) {

@@ -6,7 +6,7 @@ import { GalleryDetail } from "@/components/sections/gallery-detail";
 import { PageBanner } from "@/components/sections/page-banner";
 import { contact } from "@/content/beranda";
 import { gallerySlugs, getGalleryItem } from "@/content/galeri";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, pageMetadata } from "@/lib/seo";
 import { shareLinks } from "@/lib/share";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -23,11 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getGalleryItem(slug);
   if (!item) return {};
 
-  return {
+  return pageMetadata({
     title: item.title,
     description: item.summary,
-    alternates: { canonical: `/galeri/${slug}` },
-  };
+    path: `/galeri/${slug}`,
+  });
 }
 
 export default async function GaleriDetailPage({ params }: Props) {

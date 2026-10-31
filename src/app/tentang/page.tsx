@@ -10,14 +10,15 @@ import { WhoWeAre } from "@/components/sections/who-we-are";
 import { sitePages } from "@/config/site";
 import { brands, contact, testimonials } from "@/content/beranda";
 import { banner, intro, services, who } from "@/content/tentang";
+import { pageMetadata } from "@/lib/seo";
 
 const page = sitePages[1];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.title,
   description: page.description,
-  alternates: { canonical: page.path },
-};
+  path: page.path,
+});
 
 export default function TentangPage() {
   return (

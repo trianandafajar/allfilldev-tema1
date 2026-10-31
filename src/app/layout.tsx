@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Mali, Montserrat, Noto_Serif } from "next/font/google";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Preloader } from "@/components/shared/preloader";
 import { siteConfig } from "@/config/site";
+import { absoluteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -31,12 +32,24 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
     locale: siteConfig.locale,
+    url: "/",
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: siteConfig.themeColor,
 };
 
 const organizationJsonLd = {
@@ -47,6 +60,13 @@ const organizationJsonLd = {
       "@id": `${siteConfig.url}/#organization`,
       name: siteConfig.name,
       url: siteConfig.url,
+      description: siteConfig.description,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl(siteConfig.logo),
+        width: 200,
+        height: 200,
+      },
     },
     {
       "@type": "WebSite",
