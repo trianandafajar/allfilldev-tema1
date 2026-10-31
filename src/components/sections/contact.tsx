@@ -3,6 +3,7 @@ import Image from "next/image"
 import { ContactForm, type ContactFormLabels } from "@/components/shared/contact-form"
 import { NewsletterForm } from "@/components/shared/newsletter-form"
 import { SectionTitle } from "@/components/shared/section-title"
+import { cn } from "@/lib/utils"
 
 type Decoration = { src: string; width: number; height: number }
 
@@ -18,15 +19,19 @@ export type ContactProps = {
   form: ContactFormLabels & { eyebrow: string; title: string }
   getElement: Decoration
   sunElement: Decoration
+  /** Kelas tambahan untuk `<section>`, mis. spasi bawah saat seksi tidak langsung diikuti footer. */
+  className?: string
+  /** Kelas tambahan untuk kartu form kontak, mis. padding vertikal lebih lega. */
+  formClassName?: string
 }
 
-export function Contact({ newsletter, form, getElement, sunElement }: ContactProps) {
+export function Contact({ newsletter, form, getElement, sunElement, className, formClassName }: ContactProps) {
   const { eyebrow, title, ...labels } = form
 
   return (
     <section
       id="kontak"
-      className="relative z-1 overflow-hidden bg-forest"
+      className={cn("relative z-1 overflow-hidden bg-forest", className)}
     >
       <div className="container">
         <div className="container relative">
@@ -51,7 +56,12 @@ export function Contact({ newsletter, form, getElement, sunElement }: ContactPro
                 />
               </div>
             </div>
-            <div className="relative z-9 rounded-[20px] bg-white p-[15px] shadow-brand min-[501px]:p-[30px] xl:p-[60px]">
+            <div
+              className={cn(
+                "relative z-9 rounded-[20px] bg-white p-[15px] shadow-brand min-[501px]:p-[30px] xl:p-[60px]",
+                formClassName
+              )}
+            >
               <SectionTitle
                 align="left"
                 eyebrow={eyebrow}

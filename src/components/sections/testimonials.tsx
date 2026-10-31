@@ -7,6 +7,7 @@ import {
   TestimonialSlider,
   type TestimonialEntry,
 } from "@/components/shared/testimonial-slider"
+import { cn } from "@/lib/utils"
 
 export type TestimonialsProps = {
   eyebrow: string
@@ -21,6 +22,8 @@ export type TestimonialsProps = {
     suffix: string
     label: string
   }
+  /** Spasi vertikal tambahan bila seksi tidak diapit seksi ber-padding (mis. `space-bottom`). */
+  className?: string
 }
 
 export function Testimonials({
@@ -30,11 +33,15 @@ export function Testimonials({
   items,
   image,
   highlight,
+  className,
 }: TestimonialsProps) {
   return (
     <section
       id="testimoni"
-      className="relative z-1 overflow-hidden before:absolute before:top-0 before:left-0 before:h-[410px] before:w-full before:bg-linear-to-b/srgb before:from-transparent before:to-primary before:opacity-10 before:content-['']"
+      className={cn(
+        "relative z-1 overflow-hidden before:absolute before:top-0 before:left-0 before:h-[410px] before:w-full before:bg-linear-to-b/srgb before:from-transparent before:to-primary before:opacity-10 before:content-['']",
+        className
+      )}
     >
       <div className="container">
         <div className="grid items-center gap-6 md:grid-cols-2">

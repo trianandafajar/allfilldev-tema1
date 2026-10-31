@@ -9,4 +9,14 @@ export const siteConfig = {
 
 export const sitePages = [
   { path: "/", title: "Beranda", description: siteConfig.description },
+  {
+    path: "/tentang",
+    title: "Tentang Kami",
+    description: "Kenali AgriHub: tim, nilai, dan layanan kami dalam mendampingi petani menuju hasil panen yang lebih baik.",
+  },
+  {
+    path: "/kontak",
+    title: "Kontak",
+    description: "Hubungi AgriHub lewat alamat, telepon, email, atau formulir untuk konsultasi dan pertanyaan seputar layanan kami.",
+  },
 ] as const;
