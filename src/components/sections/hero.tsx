@@ -83,7 +83,7 @@ export function Hero({
         width={image.width}
         height={image.height}
         priority
-        className="absolute right-0 bottom-0 -z-1 h-[84%] w-auto max-w-none rounded-tl-[142px] object-fill opacity-30 lg:opacity-60 xl:h-3/4 xl:opacity-100 2xl:h-[84%] 2xl:max-[1600px]:w-1/2"
+        className="absolute right-0 bottom-0 -z-1 h-[84%] w-full max-w-none rounded-tl-[142px] object-cover opacity-30 lg:w-1/2 lg:opacity-60 xl:h-3/4 xl:opacity-100 2xl:h-[84%]"
       />
     </section>
   )

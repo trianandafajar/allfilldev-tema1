@@ -26,7 +26,7 @@ export const hero: HeroProps = {
     "Lebih dari satu dekade kami mendampingi petani dengan layanan terbaik dan rekam jejak yang terbukti di lapangan.",
   cta: { label: "Selengkapnya", href: "/tentang" },
   video,
-  image: { src: "/images/banner/hero-3.png", alt: "Petani merawat tanaman di kebun", width: 843, height: 730 },
+  image: { src: "/images/banner/hero-3.png", alt: "Petani merawat tanaman di kebun", width: 1672, height: 941 },
 }
 
 export const services: ServicesProps = {
