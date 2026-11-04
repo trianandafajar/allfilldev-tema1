@@ -28,7 +28,7 @@ export function Hero({
 }: HeroProps) {
   return (
     <section className="relative z-1 overflow-hidden bg-[url('/images/banner/hero3-bg.png')] bg-cover bg-center bg-no-repeat pt-[60px] lg:pt-20">
-      <div className="container-wide">
+      <div className="container">
         <div className="relative">
           <div className="md:w-[calc(0.75*(100%+24px)-24px)] lg:w-[calc(0.583333*(100%+24px)-24px)]">
             <div className="pt-20 pb-[100px] md:pt-[110px] md:pb-[130px] xl:pt-[120px] xl:pb-[140px] 2xl:pt-[190px] 2xl:pb-[177px]">
@@ -83,7 +83,7 @@ export function Hero({
         width={image.width}
         height={image.height}
         priority
-        className="absolute right-0 bottom-0 -z-1 h-[84%] w-full max-w-none rounded-tl-[142px] object-cover opacity-30 lg:w-1/2 lg:opacity-60 xl:h-3/4 xl:opacity-100 2xl:h-[84%]"
+        className="absolute right-0 bottom-0 -z-1 h-[84%] w-full max-w-none rounded-tl-[142px] object-cover opacity-30 lg:w-1/2 lg:opacity-60 xl:h-3/4 xl:w-[45%] xl:opacity-100 2xl:h-[84%] 2xl:w-1/2"
       />
     </section>
   )

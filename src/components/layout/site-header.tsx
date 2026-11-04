@@ -12,7 +12,7 @@ import { headerCta, navItems } from "@/content/situs"
 export function SiteHeader() {
   return (
     <HeaderShell>
-      <div className="container-wide">
+      <div className="container">
         <div className="flex items-center justify-between">
           <div>
             <Link href="/" aria-label={`${siteConfig.name} - Beranda`} className="block">
